@@ -28,6 +28,17 @@ export class FruitComponent {
     console.log(this.jobs);
     this.changeName(this.name);
     this.changeAge(this.age);
+
+    // variables and scope
+    var one = 8;
+    var two = 15;
+
+    if(one === 8){
+      let one = 3;
+      var two = 88;
+      console.log("inside of the if " + one);
+    }
+    console.log('outside of ' + one);
   }
 
   changeName(name) {
