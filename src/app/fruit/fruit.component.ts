@@ -6,12 +6,36 @@ import { Component } from '@angular/core';
 })
 
 export class FruitComponent {
+
   public name_component = 'Fruit Component';
   public list_fruit = 'Apple, banana, mango and pear';
 
-  public name:string = 'jonnyalexbh';
-  public age:number = 26;
-  public adult:boolean = true;
+  public name:string;
+  public age:number;
+  public adult:boolean;
   public jobs:Array<string> = ['Carpenter', 'bricklayer', 'plumber'];
-  public anyone:any = 99;
+  public anyone:any;
+
+  constructor(){
+    this.name = 'jonnyalex.bh';
+    this.age = 26;
+    this.adult = true;
+    this.anyone = 'Yes';
+  }
+
+  ngOnInit(){
+    console.log(this.anyone);
+    console.log(this.jobs);
+    this.changeName(this.name);
+    this.changeAge(this.age);
+  }
+
+  changeName(name) {
+    console.log("My name is " + name);
+  }
+
+  changeAge(age) {
+    console.log("My age is " + age);
+  }
+
 }
