@@ -1,10 +1,25 @@
 <h3>{{title}}</h3>
 
-
 <strong>Employee star:</strong>
-<ul>
-  <li>{{employee.name}}</li>
-  <li>{{employee.age}}</li>
-  <li>{{employee.position}}</li>
-  <li>{{employee.hired}}</li>
-</ul>
+<br><br>
+<div *ngIf="employee_external == true">
+  <button (click)="changeExternal(false)">Show employee</button>
+  <ul >
+    <li>{{workers[0].name}}</li>
+    <li>{{workers[0].age}}</li>
+    <li>{{workers[0].position}}</li>
+    <li *ngIf="workers[0].hired == true">Is hired</li>
+    <li *ngIf="workers[0].hired == false">Is not hired</li>
+  </ul>
+</div>
+
+<div *ngIf="employee_external == false">
+  <button (click)="changeExternal(true)">Show worker</button>
+  <ul>
+    <li>{{employee.name}}</li>
+    <li>{{employee.age}}</li>
+    <li>{{employee.position}}</li>
+    <li *ngIf="employee.hired == true">Is hired</li>
+    <li *ngIf="employee.hired == false">Is not hired</li>
+  </ul>
+</div>

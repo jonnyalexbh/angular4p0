@@ -10,18 +10,28 @@ export class EmployeeComponent {
   public title = 'component employee:';
   public employee:Employee;
   public workers:Array<Employee>;
+  public employee_external:boolean;
 
   constructor(){
+
     this.employee = new Employee('Jonny Alexander', 26, 'Ing. sistemas', true);
     this.workers = [
-      new Employee('Jonny Alexander', 26, 'Ing. sistemas', true),
+      new Employee('Yesenia Ortiz', 34, 'Alimentos', false),
       new Employee('Juan David Lopez', 30, 'Ing. sistemas', false),
       new Employee('Daniela Lopez', 56, 'Ing. industrial', true)
     ];
+
+    this.employee_external = true;
+
   }
 
   ngOnInit(){
     console.log(this.employee);
     console.log(this.workers);
   }
+
+  changeExternal(paramt){
+    this.employee_external = paramt;
+  }
+
 }
