@@ -11,6 +11,7 @@ export class EmployeeComponent {
   public employee:Employee;
   public workers:Array<Employee>;
   public employee_external:boolean;
+  public color:string;
 
   constructor(){
 
@@ -22,6 +23,7 @@ export class EmployeeComponent {
     ];
 
     this.employee_external = true;
+    this.color = 'green';
 
   }
 

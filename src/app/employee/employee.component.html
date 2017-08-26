@@ -1,5 +1,17 @@
 <h3>{{title}}</h3>
 
+<hr>
+
+<h3>colors switch</h3>
+
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase="'red'" [ngStyle]="{'background':color, 'color': 'white', 'padding': '20px'}">It's red</li>
+  <li *ngSwitchCase="'green'" [ngStyle]="{'background':color, 'color': 'white', 'padding': '20px'}">It's green</li>
+  <li *ngSwitchCase="'blue'" [ngStyle]="{'background':color, 'color': 'white', 'padding': '20px'}">It's blue</li>
+</ul>
+
+<hr>
+
 <strong>Employee star:</strong>
 <br><br>
 <div *ngIf="employee_external == true">
@@ -23,6 +35,8 @@
     <li *ngIf="employee.hired == false">Is not hired</li>
   </ul>
 </div>
+
+<hr>
 
 <h3>List of employees</h3>
 
