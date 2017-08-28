@@ -1,7 +1,14 @@
 <h3>{{title}}</h3>
 
 <hr>
+<h3>Color picker</h3>
+<button (click)="logSelectedColor()">Show log</button>
+<input type="text" [(ngModel)]="selected_color">
+<div [ngStyle]="{'background':selected_color, 'width': '200px', 'height': '200px', 'float': 'right', 'margin-right': '69%'}">&nbsp;</div>
+<pre><strong>Selected color:</strong> {{selected_color}}</pre>
+<div style="clear:both"></div>
 
+<hr>
 <h3>colors switch</h3>
 
 <ul [ngSwitch]="color">

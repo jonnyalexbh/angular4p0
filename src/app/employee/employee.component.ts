@@ -12,6 +12,7 @@ export class EmployeeComponent {
   public workers:Array<Employee>;
   public employee_external:boolean;
   public color:string;
+  public selected_color:string;
 
   constructor(){
 
@@ -24,6 +25,7 @@ export class EmployeeComponent {
 
     this.employee_external = true;
     this.color = 'green';
+    this.selected_color =  '#CCC';
 
   }
 
@@ -34,6 +36,10 @@ export class EmployeeComponent {
 
   changeExternal(paramt){
     this.employee_external = paramt;
+  }
+
+  logSelectedColor(){
+    console.log(this.selected_color);
   }
 
 }
