@@ -22,4 +22,12 @@ export class ContactComponent{
     });
   }
 
+  redirect(){
+    this._router.navigate(['/contact', 'jonnyalex.bh@gmail.com']);
+  }
+
+  redirectTow(){
+    this._router.navigate(['/home']);
+  }
+
 }
