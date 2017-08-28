@@ -9,3 +9,8 @@
 .bigLetter{
   font-size: 20px;
 }
+
+.activated{
+  background: yellow;
+  font-weight: bold;
+}
