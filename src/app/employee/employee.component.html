@@ -5,8 +5,11 @@
 <button (click)="logSelectedColor()">Show log</button>
 <input type="text" [(ngModel)]="selected_color">
 <div [ngStyle]="{'background':selected_color, 'width': '200px', 'height': '200px', 'float': 'right', 'margin-right': '69%'}">&nbsp;</div>
-<pre [style.border]="selected_color == 'red' ? '5px solid black' : '1px solid green'">
-  <strong>Selected color:</strong> {{selected_color}}
+<pre
+[style.border]="selected_color == 'red' ? '5px solid black' : '1px solid green'"
+[class.backgroundBlue]="selected_color == 'blue'"
+>
+<strong>Selected color:</strong> {{selected_color}}
 </pre>
 <div style="clear:both"></div>
 
