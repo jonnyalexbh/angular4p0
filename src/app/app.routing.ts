@@ -5,12 +5,16 @@ import { Routes, RouterModule} from '@angular/router';
 
 import { EmployeeComponent } from './employee/employee.component';
 import { FruitComponent } from './fruit/fruit.component';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes = [
-  {path: '', component: EmployeeComponent },
+  {path: '', component: HomeComponent },
   {path: 'employee', component: EmployeeComponent },
   {path: 'fruit', component: FruitComponent },
-  {path: '**', component: EmployeeComponent }
+  {path: 'home', component: HomeComponent },
+  {path: 'contact', component: ContactComponent },
+  {path: '**', component: HomeComponent }
 ];
 
 export const appRoutingProviders: any[] = [];
