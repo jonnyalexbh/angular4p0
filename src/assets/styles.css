@@ -1,3 +1,11 @@
 .backgroundBlue{
   background: LightBlue !important;
 }
+
+.backgroundGreen{
+  background: LightGreen !important;
+}
+
+.bigLetter{
+  font-size: 20px;
+}
