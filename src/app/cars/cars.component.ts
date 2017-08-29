@@ -9,13 +9,23 @@ import { Car } from './car';
 export class CarsComponent{
 
   public car: Car;
+  public cars:Array<Car>;
 
   constructor(){
     this.car = new Car("", "", "");
+    this.cars = [
+      new Car("Sail LTZ", "120", "black"),
+      new Car("Renault Clio", "110", "blue")
+    ];
   }
 
   onSubmit(){
-    console.log(this.car);
+    this.cars.push(this.car);
+    this.car = new Car("", "", "");
+  }
+
+  clear(){
+
   }
 
 }

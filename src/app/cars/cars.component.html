@@ -1,23 +1,50 @@
+<style media="screen">
+  .list-cars{
+    margin-left: 60px;
+  }
+  div{
+    float :left;
+  }
+  form {
+    width: 200px;
+  }
+  input[type="text"], span {
+    display: block;
+    width: 100%;
+  }
+</style>
+
 <h1>Car component</h1>
 
-<form #formCar="ngForm" (ngSubmit)="onSubmit()">
-  <p>
-    <label for="">Name</label>
-    <input type="text" name="name" #name="ngModel" [(ngModel)]="car.name" required>
-    <span *ngIf="name.touched && !name.valid">The car name is wrong</span>
-  </p>
+<div>
+  <form #formCar="ngForm" (ngSubmit)="onSubmit(); formCar.reset();">
+    <p>
+      <label for="">Name</label>
+      <input type="text" name="name" #name="ngModel" [(ngModel)]="car.name" required>
+      <span *ngIf="name.touched && !name.valid">The car name is wrong</span>
+    </p>
 
-  <p>
-    <label for="">capacity</label>
-    <input type="text" name="capacity" #capacity="ngModel" [(ngModel)]="car.capacity" required pattern="[0-9]+">
-    <span *ngIf="capacity.touched && !capacity.valid">The car capacity is wrong</span>
-  </p>
+    <p>
+      <label for="">capacity</label>
+      <input type="text" name="capacity" #capacity="ngModel" [(ngModel)]="car.capacity" required pattern="[0-9]+">
+      <span *ngIf="capacity.touched && !capacity.valid">The car capacity is wrong</span>
+    </p>
 
-  <p>
-    <label for="">color</label>
-    <input type="text" name="color" #color="ngModel" [(ngModel)]="car.color" required pattern="[a-zA-Z#]+">
-    <span *ngIf="color.touched && !color.valid">The color is wrong</span>
-  </p>
+    <p>
+      <label for="">color</label>
+      <input type="text" name="color" #color="ngModel" [(ngModel)]="car.color" required pattern="[a-zA-Z#]+">
+      <span *ngIf="color.touched && !color.valid">The color is wrong</span>
+    </p>
 
-  <input type="submit" value="Send">
-</form>
+    <input type="submit" value="Send" [disabled]="!formCar.form.valid">
+  </form>
+</div>
+
+<div class="list-cars">
+  <h4>List of cars</h4>
+  <ul>
+    <li *ngFor="let row of cars">
+      {{row.name}} - {{row.capacity}} - {{row.color}}
+    </li>
+  </ul>
+</div>
