@@ -13,6 +13,7 @@ export class HomeComponent{
   public hold_save:string;
 
   public showDate;
+  public name = 'Jonny Alexander';
 
   constructor(
     private _clothesService: ClothesService)
