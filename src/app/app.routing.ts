@@ -8,6 +8,7 @@ import { FruitComponent } from './fruit/fruit.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { CarsComponent } from './cars/cars.component';
+import { LayoutComponent } from './layouts/layout.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent },
   {path: 'contact/:page', component: ContactComponent },
   {path: 'cars', component: CarsComponent },
+  {path: 'templates', component: LayoutComponent },
   {path: '**', component: HomeComponent }
 ];
 
