@@ -1,5 +1,9 @@
 <h2>{{title}}</h2>
-<br>
+
+{{ showDate | date:'dd/MM/yyyy' }}
+
+<br><br>
+
 <input type="text" [(ngModel)]="hold_save">
 <button (click)="savePledge()">Add garment</button>
 <p *ngIf="hold_save">The garment to keep is: <b>{{hold_save}}</b></p>
