@@ -1,1 +1,12 @@
 <h2>{{title}}</h2>
+<br>
+<input type="text" [(ngModel)]="hold_save">
+<button (click)="savePledge()">Add garment</button>
+<p *ngIf="hold_save">The garment to keep is: <b>{{hold_save}}</b></p>
+<h3>List of clothes</h3>
+<ul>
+  <li *ngFor="let garment of clothing_list; let i = index">
+    {{i}} - {{garment}}
+    <button (click)="removeGarment(i)">Delete</button>
+  </li>
+</ul>
