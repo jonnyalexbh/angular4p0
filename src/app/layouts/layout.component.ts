@@ -15,4 +15,8 @@ export class LayoutComponent{
     this.administrator = true;
   }
 
+  change(value){
+    this.administrator = value;
+  }
+
 }
