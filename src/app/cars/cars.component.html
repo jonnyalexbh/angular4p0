@@ -1,0 +1,20 @@
+<h1>Car component</h1>
+
+<form #formCar="ngForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label for="">Name</label>
+    <input type="text" name="name" #name="ngModel" [(ngModel)]="car.name" required>
+  </p>
+
+  <p>
+    <label for="">capacity</label>
+    <input type="text" name="capacity" #capacity="ngModel" [(ngModel)]="car.capacity" required>
+  </p>
+
+  <p>
+    <label for="">color</label>
+    <input type="text" name="color" #color="ngModel" [(ngModel)]="car.color" required>
+  </p>
+
+  <input type="submit" value="Send">
+</form>
