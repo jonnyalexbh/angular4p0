@@ -12,6 +12,7 @@ export class CarsComponent{
 
   public car: Car;
   public cars:Array<Car>;
+  public articles;
 
   constructor(private _requestService: RequestService){
     this.car = new Car("", "", "");
@@ -22,7 +23,18 @@ export class CarsComponent{
   }
 
   ngOnInit(){
-    console.log(this._requestService.getTest());
+    this._requestService.getArticles().subscribe(
+      result => {
+        this.articles = result;
+        if(!this.articles){
+          console.log("Server error");
+        }
+      },
+      error => {
+        var errorMessague = <any>error;
+        console.log(errorMessague);
+      }
+    )
   }
 
   onSubmit(){
