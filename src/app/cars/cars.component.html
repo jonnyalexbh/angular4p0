@@ -4,16 +4,19 @@
   <p>
     <label for="">Name</label>
     <input type="text" name="name" #name="ngModel" [(ngModel)]="car.name" required>
+    <span *ngIf="name.touched && !name.valid">The car name is wrong</span>
   </p>
 
   <p>
     <label for="">capacity</label>
-    <input type="text" name="capacity" #capacity="ngModel" [(ngModel)]="car.capacity" required>
+    <input type="text" name="capacity" #capacity="ngModel" [(ngModel)]="car.capacity" required pattern="[0-9]+">
+    <span *ngIf="capacity.touched && !capacity.valid">The car capacity is wrong</span>
   </p>
 
   <p>
     <label for="">color</label>
-    <input type="text" name="color" #color="ngModel" [(ngModel)]="car.color" required>
+    <input type="text" name="color" #color="ngModel" [(ngModel)]="car.color" required pattern="[a-zA-Z#]+">
+    <span *ngIf="color.touched && !color.valid">The color is wrong</span>
   </p>
 
   <input type="submit" value="Send">
